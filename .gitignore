@@ -13,4 +13,7 @@ yarn-error.log
 ./.idea
 .gitignore
 _ide_helper.php
+<<<<<<< HEAD
 .phpstorm.meta.php
+=======
+>>>>>>> origin/master
