@@ -13,6 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','FirstController@home')
+    ->name('home');
+
+Route::get('/about/{id}', 'FirstController@show');
+
+Route::get('/articles', ['uses' => 'Admin\CoreController@getArticles', 'as' => 'article']);
+Route::get('/article/{page}',
+    ['uses' => 'Admin\CoreController@getArticle',
+        'as' => 'article'])->middleware('myMiddle:admin');
+
+//list pages
+//Route::resource('/pages','Admin\CoreResource',['only'=>['index','show']]);
+
+
